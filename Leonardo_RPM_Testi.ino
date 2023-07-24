@@ -38,30 +38,31 @@ void updateEncoder()
 }
 
 
-void  Rpm_Sens1()    // Tüm  Rpm değerlerinin okunduğu tek fonksiyon
+void  Rpm_Sens1()    //RPM FUNCTİON
+
 {
   currentMillis1 = millis();
     if (currentMillis1 - previousMillis1 == 1000)
      {
       previousMillis1 = currentMillis1;
 
-      rpm_sens1 = HallEffectValue1 * 60 /80;       //SENSÖR1 RPM HESAPLAMASI YAPIP EKRANA YAZDIRIR  
+      rpm_sens1 = HallEffectValue1 * 60 /80;       //SENSÖR1 RPM MEASUREMENT
       Serial.print(rpm_sens1);
       Serial.print(",");
       HallEffectValue1 = 0;
 
-      rpm_sens2 = HallEffectValue2 * 60/80;        //SENSÖR2 RPM HESAPLAMASI YAPIP EKRANA YAZDIRIR  
+      rpm_sens2 = HallEffectValue2 * 60/80;        //SENSÖR2 RPM MEASUREMENT
       Serial.print(rpm_sens2);
       Serial.print(",");
       HallEffectValue2 = 0;
 
 
-      rpm_encoder = EncoderValue * 60 /2000;        //ENCODER RPM HESAPLAMASI YAPIP EKRANA YAZDIRIR  
+      rpm_encoder = EncoderValue * 60 /2000;        //ENCODER RPM MEASUREMENT 
       Serial.print(rpm_encoder);
       Serial.print(",");
       EncoderValue = 0;
 
-      rpm_tachometer = Tachometer*60 /2000;         //TACHOMETER RPM HESAPLAMASI YAPIP EKRANA YAZDIRIR
+      rpm_tachometer = Tachometer*60 /2000;         //TACHOMETER RPM MEASUREMENT
       Serial.print(rpm_tachometer);
       Serial.println(",");
       Tachometer = 0;
